@@ -50,6 +50,7 @@ public class EmpleadoController {
 			c.setApellido(cliente.getApellido());
 			c.setFechaNacimiento(LocalDateTime.parse(cliente.getFecha()));
 			c.setGenero(cliente.getGenero());
+			c.setHobby(cliente.getHobby());
 			this.iEmpleadoService.registrarCliente(c);
 			return "redirect:/empl/clientes";
 		} catch (Exception e) {

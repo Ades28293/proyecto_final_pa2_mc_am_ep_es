@@ -31,6 +31,7 @@ public class ClienteController {
 			c.setApellido(cliente.getApellido());
 			c.setFechaNacimiento(LocalDateTime.parse(cliente.getFecha()));
 			c.setGenero(cliente.getGenero());
+			c.setHobby(cliente.getHobby());
 			this.clienteService.insertar(c);
 			return "redirect:/menus/cliente";
 		} catch (Exception e) {
@@ -60,7 +61,7 @@ public class ClienteController {
 			c.setNombre(cliente.getNombre());
 			c.setApellido(cliente.getApellido());
 			c.setGenero(cliente.getGenero());
-
+			c.setHobby(cliente.getHobby());
 			this.clienteService.actualizar(c);
 			return "redirect:/menus/cliente";
 		} catch (Exception e) {

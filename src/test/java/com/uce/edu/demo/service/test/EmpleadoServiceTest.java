@@ -55,7 +55,7 @@ public class EmpleadoServiceTest {
 	@Test
 	void testIngresarVehiculo() {
 		Vehiculo v = new Vehiculo();
-		v.setPlaca("ASD-333");
+		v.setPlaca("ASS-333");
 		v.setMarca("Audi");
 		v.setModelo("Blackc");
 		v.setAvaluo(new BigDecimal(20000));

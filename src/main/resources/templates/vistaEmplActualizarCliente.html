@@ -26,6 +26,7 @@
 </style>
 
 <h1 style="text-align:center">Budget Rent A Car</h1>
+
 <body>
 	<form th:action="@{/empl/clienteAct/{id}(id=${cliente.id})}" th:object="${cliente}" th:method="PUT">
 		<table class="table table-dark table-striped">
@@ -41,8 +42,13 @@
 				<td><label>Género:</label></td>
 				<td><input type="text" id="genero" th:field="${cliente.genero}"></td>
 			</tr>
+			<tr>
+				<td><label>Hobby:</label></td>
+				<td><input type="text" id="hobby" th:field="${cliente.hobby}"></td>
+			</tr>
+
 		</table>
-		<input type="submit" value="Actualizar"  class="btn btn-warning">
+		<input type="submit" value="Actualizar" class="btn btn-warning">
 	</form>
 </body>
 

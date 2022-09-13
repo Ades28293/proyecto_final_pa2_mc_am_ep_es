@@ -8,6 +8,7 @@ public class ClienteDTO {
 	private String apellido;
 	private String fecha;
 	private String genero;
+	private String hobby;
 
 	// GET & SET
 	public Integer getId() {
@@ -58,4 +59,12 @@ public class ClienteDTO {
 		this.genero = genero;
 	}
 
+	public String getHobby() {
+		return hobby;
+	}
+
+	public void setHobby(String hobby) {
+		this.hobby = hobby;
+	}
+	
 }

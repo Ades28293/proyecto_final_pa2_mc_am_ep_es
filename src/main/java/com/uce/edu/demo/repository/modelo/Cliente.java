@@ -43,6 +43,9 @@ public class Cliente {
 	@Column(name="clien_numero_tarjeta")
 	private String numeroTarjeta;
 	
+	@Column(name="clien_hobby")
+	private String hobby;
+	
 	
 	@OneToMany(mappedBy = "cliente")
 	private List<Reserva> reservas;
@@ -118,6 +121,14 @@ public class Cliente {
 
 	public void setNumeroTarjeta(String numeroTarjeta) {
 		this.numeroTarjeta = numeroTarjeta;
+	}
+
+	public String getHobby() {
+		return hobby;
+	}
+
+	public void setHobby(String hobby) {
+		this.hobby = hobby;
 	}
 	
 	

@@ -37,6 +37,7 @@
 				<th>Fecha de Nacimiento</th>
 				<th>Genero</th>
 				<th>Registro</th>
+				<th>Hobby</th>
 				<th>Ver</th>
 				<th>Actualizar</th>
 				<th>Eliminar</th>
@@ -50,6 +51,7 @@
 				<td th:text="${cliente.fechaNacimiento}"></td>
 				<td th:text="${cliente.genero}"></td>
 				<td th:text="${cliente.registro}"></td>
+				<td th:text="${cliente.hobby}"></td>
 
 				<td>
 					<form action="#" th:action="@{/empl/clienteBusq/{id}(id=${cliente.id})}" th:object="${cliente}"
