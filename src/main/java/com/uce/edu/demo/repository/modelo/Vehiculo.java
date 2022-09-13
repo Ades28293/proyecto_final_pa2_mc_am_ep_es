@@ -49,11 +49,12 @@ public class Vehiculo {
 	@Column(name = "vehi_estado")
 	private String estado;
 
+	@Column(name = "vehi_gasolina")
+	private String gasolina;
+
 	@OneToMany(mappedBy = "vehiculo")
 	private List<Reserva> reservas;
 
-
-	
 	// SET y GET
 	public Integer getId() {
 		return id;
@@ -141,6 +142,14 @@ public class Vehiculo {
 
 	public void setReservas(List<Reserva> reservas) {
 		this.reservas = reservas;
+	}
+
+	public String getGasolina() {
+		return gasolina;
+	}
+
+	public void setGasolina(String gasolina) {
+		this.gasolina = gasolina;
 	}
 
 }

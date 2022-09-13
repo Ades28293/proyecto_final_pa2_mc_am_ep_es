@@ -38,6 +38,7 @@
 				<th>Año</th>
 				<th>Estado</th>
 				<th>Valor por dia</th>
+				<th>Gasolina</th>
 				<th>Ver</th>
 				<th>Actualizar</th>
 				<th>Eliminar</th>
@@ -52,6 +53,7 @@
 				<td th:text="${vehiculo.anioFabricacion}"></td>
 				<td th:text="${vehiculo.estado}"></td>
 				<td th:text="${vehiculo.valorPorDia}"></td>
+				<td th:text="${vehiculo.gasolina}"></td>
 				<td>
 					<form action="#" th:action="@{/empl/vehiculoBusq/{placa}(placa=${vehiculo.placa})}"
 						th:object="${vehiculo}" th:method="GET">

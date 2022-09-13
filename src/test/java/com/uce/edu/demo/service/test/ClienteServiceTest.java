@@ -82,7 +82,7 @@ public class ClienteServiceTest {
 	@Test
 	void testEliminar() {
 		Cliente c = new Cliente();
-		c.setCedula("1313151621");
+		c.setCedula("1829282821");
 		this.iClienteService.eliminarPorCedula(c.getCedula());
 		try {
 			Cliente cbusqueda = this.iClienteService.buscarCedula(c.getCedula());

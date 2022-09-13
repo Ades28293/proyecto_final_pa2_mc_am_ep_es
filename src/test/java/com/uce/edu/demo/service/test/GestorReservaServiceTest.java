@@ -43,7 +43,7 @@ public class GestorReservaServiceTest {
 		Vehiculo v = new Vehiculo();
 		Cliente c = new Cliente();
 		v.setPlaca("CXX-333");
-		c.setCedula("117251313");
+		c.setCedula("1829282821");
 		this.iGestorReservasService.reservarVehiculo(v.getPlaca(), c.getCedula(), LocalDateTime.of(2022, 9, 4, 0, 0),
 				LocalDateTime.of(2022, 9, 12, 23, 59));
 		assertThat(this.iReservaService.buscarNumero("3")).isNotNull();
@@ -89,7 +89,7 @@ public class GestorReservaServiceTest {
 		Vehiculo v = new Vehiculo();
 		Cliente c = new Cliente();
 		v.setPlaca("CXX-333");
-		c.setCedula("1313151621");
+		c.setCedula("1829282821");
 		this.iGestorReservasService.reservarVehiculo(v.getPlaca(), c.getCedula(), LocalDateTime.of(2022, 9, 4, 0, 0),
 				LocalDateTime.of(2022, 9, 12, 23, 59));
 		assertThat(this.iVehiculoService.buscarPlaca(v.getPlaca())).isNotNull();
@@ -101,7 +101,7 @@ public class GestorReservaServiceTest {
 		Vehiculo v = new Vehiculo();
 		Cliente c = new Cliente();
 		v.setPlaca("CXX-333");
-		c.setCedula("1313151621");
+		c.setCedula("1829282821");
 		this.iGestorReservasService.reservarVehiculo(v.getPlaca(), c.getCedula(), LocalDateTime.of(2022, 11, 27, 0, 0),
 				LocalDateTime.of(2022, 9, 29, 23, 59));
 		assertThat(this.iClienteService.buscarCedula(c.getCedula())).isNotNull();
@@ -111,9 +111,9 @@ public class GestorReservaServiceTest {
 	@Rollback(true)
 	void testRegistroReservadoActualizado() {
 		Cliente c = new Cliente();
-		c.setCedula("1313151621");
+		c.setCedula("1829282821");
 		Vehiculo v = new Vehiculo();
-		v.setPlaca("ASD-333");
+		v.setPlaca("CXX-333");
 		Cliente cbusqueda = this.iClienteService.buscarCedula(c.getCedula());
 		cbusqueda.setApellido("Silva");
 		cbusqueda.setGenero("F");
@@ -135,7 +135,7 @@ public class GestorReservaServiceTest {
 	void testInsertarReservaReservado() {
 		Cliente c = new Cliente();
 		Vehiculo v = new Vehiculo();
-		c.setCedula("1313151621");
+		c.setCedula("1829282821");
 		v.setPlaca("CXX-333");
 		String numero = this.iGestorReservasService.reservarVehiculo(v.getPlaca(), c.getCedula(),
 				LocalDateTime.of(2022, 9, 4, 0, 0), LocalDateTime.of(2022, 9, 12, 23, 59));
@@ -175,7 +175,7 @@ public class GestorReservaServiceTest {
 	@Rollback(true)
 	void testEliminarClienteReserva() {
 		Cliente c = new Cliente();
-		c.setCedula("117251313");
+		c.setCedula("1829282821");
 		Cliente cbusqueda = this.iClienteService.buscarCedula(c.getCedula());
 		this.iClienteService.eliminarPorCedula(cbusqueda.getCedula());
 		assertThat(cbusqueda.getCedula()).isNotNull();
@@ -185,7 +185,7 @@ public class GestorReservaServiceTest {
 	@Rollback(true)
 	void testActualizarClienteReserva() {
 		Cliente c = new Cliente();
-		c.setCedula("117251313");
+		c.setCedula("1829282821");
 		Cliente cbusqueda = this.iClienteService.buscarCedula(c.getCedula());
 		cbusqueda.setApellido("Martha");
 		cbusqueda.setGenero("M");

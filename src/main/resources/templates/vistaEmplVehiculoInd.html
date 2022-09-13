@@ -68,6 +68,10 @@
 				<td><label>Estado:</label></td>
 				<td th:text="${vehiculo.estado}"></td>
 			</tr>
+			<tr>
+				<td><label>Gasolina:</label></td>
+				<td th:text="${vehiculo.gasolina}"></td>
+			</tr>
 		</tbody>
 	</table>
 	<form action="#" th:action="@{/empl/vehiculos}" th:method="GET">

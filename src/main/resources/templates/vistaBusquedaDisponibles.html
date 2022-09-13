@@ -14,21 +14,22 @@
 
 
 <style>
-    body {
-        background-color: rgb(204, 255, 238);
-    }
+	body {
+		background-color: rgb(204, 255, 238);
+	}
 </style>
 
 <style>
-    body {
-        background-image: url('https://www.budget.com/budgetWeb/images/newlayout/budgetLogoNew1.png%27');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 1300px 900px;
-    }
+	body {
+		background-image: url('https://www.budget.com/budgetWeb/images/newlayout/budgetLogoNew1.png%27');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: 1300px 900px;
+	}
 </style>
 
 <h1 style="text-align:center">Budget Rent A Car</h1>
+
 <body>
 	<table class="table table-dark table-striped">
 		<thead>
@@ -39,7 +40,7 @@
 				<th>Año</th>
 				<th>Estado</th>
 				<th>Valor por dia</th>
-				
+				<th>Gasolina</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -50,18 +51,20 @@
 				<td th:text="${disponible.anioFabricacion}"></td>
 				<td th:text="${disponible.estado}"></td>
 				<td th:text="${disponible.valorPorDia}"></td>
+				<td th:text="${disponible.gasolina}"></td>
 			</tr>
 		</tbody>
 	</table>
-	
+
 	<form action="#" th:action="@{/vehiculos/disponibles}" th:"${vehiculo}" th:method="GET">
 		<input class="btn btn-dark" type="submit" value="Volver">
 	</form>
-	
-	
+
+
 	<form action="#" th:action="@{/vehiculos/crearReserva}" th:"${reservaDto}" th:method="GET">
 		<input class="btn btn-dark" type="submit" value="Crear Reserva">
 	</form>
 
 </body>
+
 </html>
