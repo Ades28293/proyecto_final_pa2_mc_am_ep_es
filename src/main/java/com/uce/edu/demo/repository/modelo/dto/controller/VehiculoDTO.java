@@ -25,4 +25,6 @@ public class VehiculoDTO {
 	private BigDecimal valorPorDia;
 
 	private String estado;
+	
+	
 }

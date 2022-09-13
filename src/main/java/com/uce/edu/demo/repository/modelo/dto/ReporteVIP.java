@@ -28,6 +28,8 @@ public class ReporteVIP {
 
 	private String fechaFin;
 
+	private String gasolina;
+
 	// SET y GET
 	public String getNumero() {
 		return numero;
@@ -109,7 +111,6 @@ public class ReporteVIP {
 		this.modelo = modelo;
 	}
 
-	
 	public String getFechaInicio() {
 		return fechaInicio;
 	}
@@ -126,10 +127,12 @@ public class ReporteVIP {
 		this.fechaFin = fechaFin;
 	}
 
-	
-	
-	
-	
-	
-	
+	public String getGasolina() {
+		return gasolina;
+	}
+
+	public void setGasolina(String gasolina) {
+		this.gasolina = gasolina;
+	}
+
 }

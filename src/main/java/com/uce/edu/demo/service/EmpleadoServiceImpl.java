@@ -64,6 +64,7 @@ public class EmpleadoServiceImpl implements IEmpleadoService {
 			reporte.setPlaca(r.getVehiculo().getPlaca());
 			reporte.setMarca(r.getVehiculo().getMarca());
 			reporte.setModelo(r.getVehiculo().getModelo());
+			reporte.setGasolina(r.getVehiculo().getGasolina());
 
 			return reporte;
 		}).collect(Collectors.toList());

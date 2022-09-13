@@ -17,10 +17,11 @@ import com.uce.edu.demo.repository.modelo.Reserva;
 import com.uce.edu.demo.repository.modelo.Vehiculo;
 import com.uce.edu.demo.service.IReservaService;
 import com.uce.edu.demo.service.IVehiculoService;
+
 @SpringBootTest
 @Transactional
 @Rollback(true)
-	class ReservaServiceTest {
+class ReservaServiceTest {
 
 	@Autowired
 	private IReservaService iReservaService;
@@ -122,6 +123,5 @@ import com.uce.edu.demo.service.IVehiculoService;
 		this.iReservaService.actualizar(reserva);
 		assertEquals(this.iReservaService.buscarNumero(reserva.getNumero()).getNumero(), reserva.getNumero());
 	}
-	
-	}
 
+}

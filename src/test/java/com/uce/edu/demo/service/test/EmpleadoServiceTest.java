@@ -20,10 +20,12 @@ import com.uce.edu.demo.service.IClienteService;
 import com.uce.edu.demo.service.IEmpleadoService;
 import com.uce.edu.demo.service.IGestorReservasService;
 import com.uce.edu.demo.service.IVehiculoService;
+
 @SpringBootTest
 @Transactional
 @Rollback(true)
 public class EmpleadoServiceTest {
+
 	@Autowired
 	private IEmpleadoService empleadoService;
 
@@ -32,7 +34,7 @@ public class EmpleadoServiceTest {
 
 	@Autowired
 	private IVehiculoService iVehiculoService;
-	
+
 	@Autowired
 	private IGestorReservasService iGestorReservasService;
 
@@ -55,7 +57,7 @@ public class EmpleadoServiceTest {
 	@Test
 	void testIngresarVehiculo() {
 		Vehiculo v = new Vehiculo();
-		v.setPlaca("ASD-333");
+		v.setPlaca("ASS-333");
 		v.setMarca("Audi");
 		v.setModelo("Blackc");
 		v.setAvaluo(new BigDecimal(20000));

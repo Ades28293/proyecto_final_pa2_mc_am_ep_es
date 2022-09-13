@@ -14,24 +14,24 @@ public class VehiculoVIP implements Comparable<VehiculoVIP> {
 	private String anioFabricacion;
 
 	private BigDecimal valorPorDia;
-	
+
 	private BigDecimal subTotal;
-	
+
 	private BigDecimal totalPagar;
-	
+
 	private String anio;
 
 	private String mes;
-	
+
 	private String estado;
 
-    private LocalDateTime fechaInicio;
+	private LocalDateTime fechaInicio;
 
-    private LocalDateTime fechaFin;
+	private LocalDateTime fechaFin;
 
-    private String numeroReserva;
-	
-	
+	private String numeroReserva;
+
+	private String gasolina;
 
 	@Override
 	public String toString() {
@@ -39,19 +39,14 @@ public class VehiculoVIP implements Comparable<VehiculoVIP> {
 				+ anioFabricacion + ", valorPorDia=" + valorPorDia + ", subTotal=" + subTotal + ", totalPagar="
 				+ totalPagar + "]";
 	}
-	
 
 	@Override
 	public int compareTo(VehiculoVIP o) {
 		// TODO Auto-generated method stub
-		
-		
+
 		return this.totalPagar.compareTo(o.getTotalPagar());
 	}
-	
-	
-	
-	
+
 	// SET y GET
 
 	public String getPlaca() {
@@ -78,7 +73,6 @@ public class VehiculoVIP implements Comparable<VehiculoVIP> {
 		this.marca = marca;
 	}
 
-	
 	public String getAnioFabricacion() {
 		return anioFabricacion;
 	}
@@ -86,7 +80,6 @@ public class VehiculoVIP implements Comparable<VehiculoVIP> {
 	public void setAnioFabricacion(String anioFabricacion) {
 		this.anioFabricacion = anioFabricacion;
 	}
-
 
 	public BigDecimal getValorPorDia() {
 		return valorPorDia;
@@ -128,49 +121,44 @@ public class VehiculoVIP implements Comparable<VehiculoVIP> {
 		this.totalPagar = totalPagar;
 	}
 
-
 	public String getEstado() {
 		return estado;
 	}
-
 
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
 
-
 	public LocalDateTime getFechaInicio() {
 		return fechaInicio;
 	}
-
 
 	public void setFechaInicio(LocalDateTime fechaInicio) {
 		this.fechaInicio = fechaInicio;
 	}
 
-
 	public LocalDateTime getFechaFin() {
 		return fechaFin;
 	}
-
 
 	public void setFechaFin(LocalDateTime fechaFin) {
 		this.fechaFin = fechaFin;
 	}
 
-
 	public String getNumeroReserva() {
 		return numeroReserva;
 	}
-
 
 	public void setNumeroReserva(String numeroReserva) {
 		this.numeroReserva = numeroReserva;
 	}
 
+	public String getGasolina() {
+		return gasolina;
+	}
 
-	
-	
-	
+	public void setGasolina(String gasolina) {
+		this.gasolina = gasolina;
+	}
 
 }

@@ -25,6 +25,7 @@ import com.uce.edu.demo.service.IVehiculoService;
 @Transactional
 @Rollback(true)
 public class GestorReservaServiceTest {
+
 	@Autowired
 	private IGestorReservasService iGestorReservasService;
 
@@ -42,11 +43,11 @@ public class GestorReservaServiceTest {
 	void testReservarVehiculo() {
 		Vehiculo v = new Vehiculo();
 		Cliente c = new Cliente();
-		v.setPlaca("CXX-333");
-		c.setCedula("117251313");
-		this.iGestorReservasService.reservarVehiculo(v.getPlaca(), c.getCedula(), LocalDateTime.of(2022, 9, 4, 0, 0),
-				LocalDateTime.of(2022, 9, 12, 23, 59));
-		assertThat(this.iReservaService.buscarNumero("3")).isNotNull();
+		v.setPlaca("ASD-333");
+		c.setCedula("1313151621");
+		String num = this.iGestorReservasService.reservarVehiculo(v.getPlaca(), c.getCedula(),
+				LocalDateTime.of(2022, 9, 4, 0, 0), LocalDateTime.of(2022, 9, 12, 23, 59));
+		assertThat(this.iReservaService.buscarNumero(num)).isNotNull();
 //		fail("Not yet implemented");
 	}
 
@@ -54,7 +55,7 @@ public class GestorReservaServiceTest {
 	@Rollback(true)
 	void testVerificarDisponibilidad() {
 		Vehiculo v = new Vehiculo();
-		v.setPlaca("CXX-333");
+		v.setPlaca("ASD-333");
 		LocalDateTime fechaInicio = LocalDateTime.of(2022, 9, 4, 0, 0);
 		LocalDateTime fechaFin = LocalDateTime.of(2022, 9, 12, 23, 59);
 		this.iGestorReservasService.verificarDisponibilidad(v.getPlaca(), fechaInicio, fechaFin);
@@ -65,7 +66,7 @@ public class GestorReservaServiceTest {
 	@Rollback(true)
 	void testRetirarVehiculo() {
 		Reserva r = new Reserva();
-		r.setNumero("3");
+		r.setNumero("1");
 		Reserva rbusqueda = this.iReservaService.buscarNumero(r.getNumero());
 		this.iGestorReservasService.retirarVehiculo(rbusqueda.getNumero());
 		assertThat(rbusqueda.getNumero()).isNotNull();
@@ -76,7 +77,7 @@ public class GestorReservaServiceTest {
 	@Rollback(true)
 	void testVerificarVehiculoReservado() {
 		Reserva r = new Reserva();
-		r.setNumero("3");
+		r.setNumero("1");
 		Reserva rbusqueda = this.iReservaService.buscarNumero(r.getNumero());
 		assertEquals(this.iReservaService.buscarNumero(rbusqueda.getNumero()),
 				this.iReservaService.buscarNumero(r.getNumero()));
@@ -88,7 +89,7 @@ public class GestorReservaServiceTest {
 	void testVerificarPlacaReservada() {
 		Vehiculo v = new Vehiculo();
 		Cliente c = new Cliente();
-		v.setPlaca("CXX-333");
+		v.setPlaca("ASD-333");
 		c.setCedula("1313151621");
 		this.iGestorReservasService.reservarVehiculo(v.getPlaca(), c.getCedula(), LocalDateTime.of(2022, 9, 4, 0, 0),
 				LocalDateTime.of(2022, 9, 12, 23, 59));
@@ -100,7 +101,7 @@ public class GestorReservaServiceTest {
 	void testVerificarCedulaReservada() {
 		Vehiculo v = new Vehiculo();
 		Cliente c = new Cliente();
-		v.setPlaca("CXX-333");
+		v.setPlaca("ASD-333");
 		c.setCedula("1313151621");
 		this.iGestorReservasService.reservarVehiculo(v.getPlaca(), c.getCedula(), LocalDateTime.of(2022, 11, 27, 0, 0),
 				LocalDateTime.of(2022, 9, 29, 23, 59));
@@ -136,9 +137,9 @@ public class GestorReservaServiceTest {
 		Cliente c = new Cliente();
 		Vehiculo v = new Vehiculo();
 		c.setCedula("1313151621");
-		v.setPlaca("CXX-333");
+		v.setPlaca("IUM1241");
 		String numero = this.iGestorReservasService.reservarVehiculo(v.getPlaca(), c.getCedula(),
-				LocalDateTime.of(2022, 9, 4, 0, 0), LocalDateTime.of(2022, 9, 12, 23, 59));
+				LocalDateTime.of(2022, 9, 3, 0, 0), LocalDateTime.of(2022, 9, 6, 23, 59));
 		Reserva r;
 		try {
 			r = this.iReservaService.buscarNumero(numero);
@@ -152,7 +153,7 @@ public class GestorReservaServiceTest {
 	@Rollback(true)
 	void testEliminarReservaReservado() {
 		Reserva r = new Reserva();
-		r.setNumero("3");
+		r.setNumero("1");
 		Reserva rbuscar = this.iReservaService.buscarNumero(r.getNumero());
 		this.iReservaService.eliminar(rbuscar.getNumero());
 		assertThat(rbuscar.getNumero()).isNotNull();
@@ -163,7 +164,7 @@ public class GestorReservaServiceTest {
 	@Rollback(true)
 	void testActualizarReservaReservado() {
 		Reserva r = new Reserva();
-		r.setNumero("3");
+		r.setNumero("1");
 		Reserva rbusqueda = this.iReservaService.buscarNumero(r.getNumero());
 		rbusqueda.setNumero("4");
 		rbusqueda.setTotalPagar(new BigDecimal(10));
@@ -175,7 +176,7 @@ public class GestorReservaServiceTest {
 	@Rollback(true)
 	void testEliminarClienteReserva() {
 		Cliente c = new Cliente();
-		c.setCedula("117251313");
+		c.setCedula("1561323284");
 		Cliente cbusqueda = this.iClienteService.buscarCedula(c.getCedula());
 		this.iClienteService.eliminarPorCedula(cbusqueda.getCedula());
 		assertThat(cbusqueda.getCedula()).isNotNull();
@@ -185,11 +186,12 @@ public class GestorReservaServiceTest {
 	@Rollback(true)
 	void testActualizarClienteReserva() {
 		Cliente c = new Cliente();
-		c.setCedula("117251313");
+		c.setCedula("1561323284");
 		Cliente cbusqueda = this.iClienteService.buscarCedula(c.getCedula());
 		cbusqueda.setApellido("Martha");
 		cbusqueda.setGenero("M");
 		this.iClienteService.actualizar(cbusqueda);
 		assertEquals(this.iClienteService.buscarCedula(cbusqueda.getCedula()).getApellido(), cbusqueda.getApellido());
 	}
+
 }

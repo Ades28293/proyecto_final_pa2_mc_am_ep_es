@@ -70,7 +70,6 @@ public class ReservaRepositoryImpl implements IReservaRepository {
 			r.getCliente().getCedula();
 			r.getVehiculo().getPlaca();
 		});
-		
 
 		return lista;
 	}
