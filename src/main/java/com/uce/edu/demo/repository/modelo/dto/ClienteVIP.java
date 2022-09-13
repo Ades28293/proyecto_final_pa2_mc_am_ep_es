@@ -13,6 +13,16 @@ public class ClienteVIP implements Comparable<ClienteVIP> {
 	private BigDecimal valorTotal;
 
 	private BigDecimal iva;
+	
+	private String hobby;
+
+	public String getHobby() {
+		return hobby;
+	}
+
+	public void setHobby(String hobby) {
+		this.hobby = hobby;
+	}
 
 	@Override
 	public int compareTo(ClienteVIP o) {

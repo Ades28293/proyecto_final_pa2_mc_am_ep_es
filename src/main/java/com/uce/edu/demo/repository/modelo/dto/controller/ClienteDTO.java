@@ -8,6 +8,16 @@ public class ClienteDTO {
 	private String apellido;
 	private String fecha;
 	private String genero;
+	
+	private String hobby;
+
+	public String getHobby() {
+		return hobby;
+	}
+
+	public void setHobby(String hobby) {
+		this.hobby = hobby;
+	}
 
 	// GET & SET
 	public Integer getId() {
